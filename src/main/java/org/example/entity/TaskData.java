@@ -17,7 +17,7 @@ public class TaskData {
         this.unassignedTasks = unassignedTasks;
     }
 
-    public Set<Task> getTask(String person) {
+    public Set<Task> getTasks(String person) {
         switch (person.toLowerCase()) {
             case "ann":
                 return new HashSet<>(annsTasks);
@@ -80,7 +80,8 @@ public class TaskData {
         return multipleAssigned;
     }
 
-    
+
+
 }
 
 

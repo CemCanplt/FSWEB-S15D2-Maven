@@ -11,12 +11,12 @@ public class Task {
     private Status status;
 
     // 2. Constructor: Tüm değişkenleri başlatır.
-    public Task(String project, String description, String assignee, Priority priority, Status status) {
+    public Task(String project, String description, String assignee, Status status, Priority priority) {
         this.project = project;
         this.description = description;
         this.assignee = assignee;
-        this.priority = priority;
         this.status = status;
+        this.priority = priority;
     }
 
     // 3. Getter metotları
