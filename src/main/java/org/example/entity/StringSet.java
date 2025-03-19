@@ -22,22 +22,25 @@ public class StringSet {
                 "that did not appear in the manuscript. The only known manuscript copy of Under Ground " +
                 "is held in the British Library. Macmillan published a facsimile of the manuscript in 1886.";
 
-        // Noktalama işaretlerini temizle
-        text = text.replaceAll("[.,!?\"]", "");
+        // 1. Sayıları temizle
+        text = text.replaceAll("\\d+", "");
 
-        // Metni küçük harfe çevir
+        // 2. Noktalama işaretlerini temizle
+        text = text.replaceAll("[.,!?\";:—'-]", "");
+
+        // 3. Metni küçük harfe çevir
         text = text.toLowerCase();
 
-        // Metni kelimelere ayır
+        // 4. Metni kelimelere ayır
         String[] words = text.split("\\s+");
 
-        // Kelimeleri bir Set'e ekle (unique kelimeler)
+        // 5. Kelimeleri bir Set'e ekle (unique kelimeler)
         Set<String> uniqueWords = new HashSet<>(Arrays.asList(words));
 
-        // Kelimeleri alfabetik olarak sırala
+        // 6. Kelimeleri alfabetik olarak sırala
         Set<String> sortedUniqueWords = new TreeSet<>(uniqueWords);
 
-        // Sıralanmış unique kelimeleri döndür
+        // 7. Sıralanmış unique kelimeleri döndür
         return sortedUniqueWords;
     }
 }
