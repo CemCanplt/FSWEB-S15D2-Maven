@@ -47,7 +47,7 @@ public class TaskData {
     }
 
     // 5. getIntersect() metodu: İki set arasındaki kesişimi bulur.
-    public Set<Task> getIntersect(Set<Task> set1, Set<Task> set2) {
+    public Set<Task> getIntersection(Set<Task> set1, Set<Task> set2) {
         Set<Task> result = new HashSet<>(set1);
         // result set'inde sadece set2'de olanları tut.
         result.retainAll(set2);
@@ -55,7 +55,7 @@ public class TaskData {
     }
 
     // 6. getDifference() metodu: İlk set'ten ikinci set'in elemanlarını çıkarır.
-    public Set<Task> getDifference(Set<Task> set1, Set<Task> set2) {
+    public Set<Task> getDifferences(Set<Task> set1, Set<Task> set2) {
         Set<Task> result = new HashSet<>(set1);
         // set2'de olan elemanları result'tan çıkar.
         result.removeAll(set2);
